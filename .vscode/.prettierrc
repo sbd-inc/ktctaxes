@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "trailing-comma": "es2020",
+  "bracketSpacing": true,
+  "printWidth": 100,
+  "endOfLine": "lf"
+}
