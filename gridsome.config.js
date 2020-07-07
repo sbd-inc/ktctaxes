@@ -6,8 +6,9 @@
 
 module.exports = {
   siteName: "KTC Taxes",
-  // TODO siteUrl: "https://sbd-inc.github.io/ktctaxes/",
-  siteUrl: "http://localhost:8080",
+  siteUrl: "https://sbd-inc.github.io",
+  pathPrefix: "/ktctaxes",
+  // siteUrl: "http://localhost:8080",
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss",
