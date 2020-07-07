@@ -6,5 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  siteUrl: 'https:/sbd-inc.github.io',
+  pathPrefix: '/ktctaxes',  
   plugins: []
 }
