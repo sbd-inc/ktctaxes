@@ -15,11 +15,11 @@
           class="uppercase tracking-wide font-bold w-full block flex-grow lg:space-x-8 space-y-6 lg:space-y-0 lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
           :class="isOpen ? 'block': 'hidden'"
         >
-          <li class="mb-6 lg:mb-0" style="display: none">
+          <li class="mb-6 lg:mb-0" v-if="showExtras">
             <search-input />
           </li>
           <li>
-            <theme-switcher :theme="theme" @themeChanged="updateTheme" style="display: none"/>
+            <theme-switcher :theme="theme" @themeChanged="updateTheme" v-if="showExtras" />
           </li>
           <li>
             <a v-if="$route.path === '/'" href="/#notes" v-scroll-to="'#notes'" class="text-copy-primary hover:text-gray-600">Notes</a>
@@ -33,10 +33,10 @@
             <a v-if="$route.path === '/'" href="/#contact" v-scroll-to="'#contact'" class="text-copy-primary hover:text-gray-600">Contact</a>
             <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Contact</g-link>
           </li>
-          <li>
+          <li v-if="showExtras">
             <g-link to="/docs" class="text-copy-primary hover:text-gray-600">Docs</g-link>
           </li>
-          <li>
+          <li v-if="showExtras">
             <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
           </li>
         </ul>
@@ -103,6 +103,7 @@ export default {
       isOpen: false,
       theme: '',
       siteEmail: 'mailto:' + process.env.GRIDSOME_KTC_EMAIL,
+      showExtras: false, // GW Hide Release v2.0 features
     }
   },
   methods: {
